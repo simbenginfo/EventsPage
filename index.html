@@ -947,11 +947,6 @@
       <section class="hero-section" id="top" aria-labelledby="hero-title">
         <div class="container">
           
-          <div class="hero-badge-pill" id="hero-badge">
-            <span class="hero-badge-dot"></span>
-            <span>Annual Celebrations 2026</span>
-          </div>
-
           <div class="hero-school-label" id="hero-school-name">
             OMEGA PUBLIC SCHOOL AND KINDERGARTEN
           </div>
@@ -1131,10 +1126,31 @@
 
     // Edit the Cultural Day programme items below:
     const culturalDayItems = [
-        "Dance",
-        "Singing Performance",
-        "Cultural Presentation",
-        "Drama"
+        "Opening : Dahpi Chupna",
+        "Gollui Golseh / Cultural games",
+        "Salu lap laam: Cl-XI and XII",
+        "Nepali cultural exhibition",
+        "Kom Cultural Exhibition",
+        "Vaiphei Cultural exhibition",
+        "Flaunting of traditional attire by Cl-9",
+        "Thadou-Kuki Jaila",
+        "Tradition folk song/Pula pala",
+        "Thadou pao lhasim le hilchetna",
+        "Sagol Kengkhai",
+        "Presentation:Kindergartens",
+        "Cultural Dance from Starlights",
+        "Suhta lam: Cl-7",
+        "Joulei kon - Cl-12",
+        "Khupting lhaolha",
+        "malai ipu ipateu: Cl-IX",
+        "Pupa lenna gamhoi; Cl-4(A)",
+        "Mizo Dance: The Omegian Mizos",
+        "Cultural dance: Boarders",
+        "Cultural dance: Cl-7",
+        "Thadou cultural dance: Cl-6(B)",
+        "Soloa Neinunthem - Cl-4(A)",
+        "Traditional show: KG and Cl-1",
+        "Object identification: Cl-2"
     ];
 
     // =========================================================================
@@ -1149,10 +1165,28 @@
 
     // Edit the Teachers' Day programme items below:
     const teachersDayItems = [
-        "Dance",
-        "Welcome Speech",
-        "Teachers’ Felicitation",
-        "Musical Performance"
+        "Welcome song: Boarders",
+        "Young pioneers: 21 guns",
+        "Tributes to teachers: The Sultans",
+        "Solo: Lhingnunhoi",
+        "Solo: Satboilen Cl-4(A)",
+        "Solo: Sehgunmang Cl-7",
+        "Solo: Lamnunthem C-4(A)",
+        "Duet : Kholnunhoi & Chinjemkim Cl-3(B)",
+        "The little Bumble bees",
+        "Twinkle Toes",
+        "Dancing Stars",
+        "The Grace Sisters",
+        "Desi Family",
+        "Mangminthang: Freestyle dance",
+        "Tabahi Crew couple dance: Cl-9",
+        "Twins Fluenzee: Cl-5A",
+        "90's dance: Cl-10",
+        "The Groove Girls: Cl-4(A)",
+        "Chinese Classical Dance: Cl-5",
+        "Lhingboichan & Friends: Cl-4(A)",
+        "Choreography: The Saturn Cl-9",
+        "Choreography: KG and Nursery"
     ];
 
 
@@ -1161,13 +1195,23 @@
     // =========================================================================
     function getProgrammeIcon(itemName) {
       const name = String(itemName).toLowerCase();
-      if (name.includes('dance')) return '💃';
-      if (name.includes('speech') || name.includes('welcome')) return '🎙️';
-      if (name.includes('felicitation') || name.includes('award') || name.includes('honour') || name.includes('honor')) return '🏆';
-      if (name.includes('sing') || name.includes('song') || name.includes('choir')) return '🎤';
+      if (name.includes('opening') || name.includes('dahpi') || name.includes('chupna')) return '🪘';
+      if (name.includes('game') || name.includes('golseh') || name.includes('gollui')) return '🎯';
+      if (name.includes('exhibition') || name.includes('attire') || name.includes('flaunting')) return '👑';
+      if (name.includes('tribute') || name.includes('felicitation') || name.includes('award') || name.includes('honour') || name.includes('honor')) return '💐';
+      if (name.includes('choreography') || name.includes('choreograph')) return '🩰';
+      if (name.includes('bees') || name.includes('bumble')) return '🐝';
+      if (name.includes('pioneer') || name.includes('21 guns')) return '🎖️';
+      if (name.includes('chinese') || name.includes('classical')) return '🌸';
+      if (name.includes('duet') || name.includes('sisters') || name.includes('twins') || name.includes('family') || name.includes('friends')) return '👥';
+      if (name.includes('dance') || name.includes('laam') || name.includes('lam') || name.includes('kengkhai') || name.includes('toes') || name.includes('groove') || name.includes('crew') || name.includes('freestyle')) return '💃';
+      if (name.includes('speech') || name.includes('welcome') || name.includes('hilchetna') || name.includes('lhasim')) return '🎙️';
+      if (name.includes('sing') || name.includes('song') || name.includes('jaila') || name.includes('pala') || name.includes('choir') || name.includes('solo')) return '🎤';
       if (name.includes('music') || name.includes('instrument') || name.includes('band')) return '🎵';
       if (name.includes('drama') || name.includes('play') || name.includes('skit') || name.includes('theatre')) return '🎭';
-      if (name.includes('cultural') || name.includes('presentation') || name.includes('show')) return '✨';
+      if (name.includes('object') || name.includes('identification')) return '🧩';
+      if (name.includes('presentation') || name.includes('kindergarten') || name.includes('kg') || name.includes('nursery')) return '🎈';
+      if (name.includes('cultural') || name.includes('presentation') || name.includes('show') || name.includes('traditional') || name.includes('stars')) return '✨';
       if (name.includes('art') || name.includes('craft')) return '🎨';
       if (name.includes('vote of thanks') || name.includes('closing')) return '🙏';
       return '⭐';
