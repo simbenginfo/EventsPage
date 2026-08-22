@@ -1,0 +1,6 @@
+{
+  "name": "Omega Public School - Cultural Day & Teachers' Day 2026",
+  "description": "Official responsive landing page and programme schedule for Omega Public School and Kindergarten's Cultural Day (4 Sept) and Teachers' Day (5 Sept) 2026.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

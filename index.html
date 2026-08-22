@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Cultural Day &amp; Teachers' Day 2026 | Omega Public School and Kindergarten</title>
+  <meta name="description" content="Official event programme for Cultural Day (4 September 2026) and Teachers' Day (5 September 2026) at Omega Public School and Kindergarten.">
+  <meta name="theme-color" content="#1e1b4b">
+  
+  <!-- Google Fonts for typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       CSS VARIABLES & THEME CONFIGURATION
+       ========================================================= */
+    :root {
+      /* Brand Color Palette */
+      --color-primary: #1e1b4b;       /* Deep Midnight Blue */
+      --color-primary-light: #2e1065; /* Deep Violet */
+      
+      --color-purple: #6366f1;        /* Vibrant Indigo-Purple */
+      --color-purple-dark: #4338ca;
+      --color-purple-soft: #ede9fe;
+      --color-purple-border: #c7d2fe;
+      
+      --color-blue: #0284c7;          /* Bright Sky Blue */
+      --color-blue-soft: #e0f2fe;
+      --color-blue-dark: #0369a1;
+      
+      --color-amber: #d97706;         /* Festive Amber Gold */
+      --color-amber-light: #f59e0b;
+      --color-amber-soft: #fef3c7;
+      --color-amber-border: #fed7aa;
+      
+      --color-coral: #ea580c;         /* Warm Coral Orange */
+      --color-coral-soft: #ffedd5;
+      
+      --color-pink: #e11d48;          /* Rose Pink */
+      --color-pink-soft: #ffe4e6;
+      
+      --color-teal: #0d9488;          /* Vibrant Teal */
+      --color-teal-soft: #ccfbf1;
+      
+      /* Neutral & Canvas */
+      --color-bg: #f8fafc;
+      --color-surface: #ffffff;
+      --color-surface-translucent: rgba(255, 255, 255, 0.92);
+      --color-text-main: #0f172a;
+      --color-text-muted: #475569;
+      --color-text-subtle: #64748b;
+      --color-border: #e2e8f0;
+      
+      /* Shadows & Radii */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --radius-pill: 9999px;
+      
+      --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.06);
+      --shadow-md: 0 8px 20px rgba(15, 23, 42, 0.06), 0 2px 6px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 16px 36px rgba(15, 23, 42, 0.09), 0 4px 12px rgba(15, 23, 42, 0.05);
+      --shadow-glow-purple: 0 10px 30px rgba(99, 102, 241, 0.25);
+      --shadow-glow-amber: 0 10px 30px rgba(245, 158, 11, 0.25);
+      
+      /* Typography */
+      --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* =========================================================
+       GLOBAL RESET & BASE STYLES
+       ========================================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      min-width: 320px;
+      width: 100%;
+      min-height: 100vh;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--color-text-main);
+      background-color: var(--color-bg);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Accessibility Focus States */
+    :focus-visible {
+      outline: 3px solid var(--color-purple);
+      outline-offset: 3px;
+    }
+
+    /* =========================================================
+       DECORATIVE BACKGROUND CANVAS (LIGHTWEIGHT CSS PARTICLES)
+       ========================================================= */
+    .bg-decorations-wrapper {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .ambient-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.45;
+    }
+
+    .glow-1 {
+      top: -100px;
+      left: -80px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, #818cf8, #c084fc);
+    }
+
+    .glow-2 {
+      top: 40%;
+      right: -120px;
+      width: 380px;
+      height: 380px;
+      background: radial-gradient(circle, #fde047, #f97316);
+      opacity: 0.3;
+    }
+
+    .glow-3 {
+      bottom: 5%;
+      left: 10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #38bdf8, #818cf8);
+      opacity: 0.35;
+    }
+
+    /* Animated subtle confetti stars */
+    .floating-star {
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      opacity: 0.65;
+      animation: floatSlow 7s ease-in-out infinite alternate;
+    }
+
+    .star-1 { top: 12%; left: 8%; animation-delay: 0s; color: #f59e0b; }
+    .star-2 { top: 22%; right: 10%; animation-delay: 1.5s; color: #6366f1; width: 22px; height: 22px; }
+    .star-3 { top: 48%; left: 4%; animation-delay: 2.8s; color: #ec4899; }
+    .star-4 { top: 65%; right: 6%; animation-delay: 0.8s; color: #0284c7; width: 24px; height: 24px; }
+    .star-5 { top: 85%; left: 12%; animation-delay: 2s; color: #10b981; }
+
+    @keyframes floatSlow {
+      0% { transform: translateY(0px) rotate(0deg) scale(0.9); }
+      50% { transform: translateY(-14px) rotate(45deg) scale(1.1); }
+      100% { transform: translateY(6px) rotate(90deg) scale(1); }
+    }
+
+    /* =========================================================
+       MAIN CONTAINER & LAYOUT STRUCTURE
+       ========================================================= */
+    .page-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      width: 100%;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1180px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: clamp(16px, 4vw, 32px);
+      padding-right: clamp(16px, 4vw, 32px);
+    }
+
+    /* =========================================================
+       HEADER / SCHOOL IDENTITY NAV
+       ========================================================= */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: clamp(60px, 8vw, 76px);
+      gap: 12px;
+    }
+
+    .school-identity {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+      min-width: 0;
+    }
+
+    .school-logo-emblem {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(38px, 6vw, 46px);
+      height: clamp(38px, 6vw, 46px);
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 100%);
+      color: #fbbf24;
+      box-shadow: 0 4px 10px rgba(67, 56, 202, 0.25);
+      flex-shrink: 0;
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.25rem;
+      border: 1.5px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .school-name-group {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .school-title {
+      font-family: var(--font-display);
+      font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--color-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.2;
+    }
+
+    .school-subtitle {
+      font-size: clamp(0.6875rem, 1.8vw, 0.8125rem);
+      font-weight: 600;
+      color: var(--color-purple-dark);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header-action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: #eff6ff;
+      color: var(--color-blue-dark);
+      border: 1px solid #bfdbfe;
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      min-height: 40px;
+    }
+
+    .header-action-btn:hover {
+      background: #dbeafe;
+      color: var(--color-primary);
+      transform: translateY(-1px);
+    }
+
+    /* =========================================================
+       HERO SECTION
+       ========================================================= */
+    .hero-section {
+      position: relative;
+      padding-top: clamp(36px, 7vw, 72px);
+      padding-bottom: clamp(40px, 7vw, 76px);
+      text-align: center;
+    }
+
+    .hero-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #ede9fe 0%, #fef3c7 100%);
+      border: 1px solid rgba(199, 210, 254, 0.8);
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      font-size: clamp(0.75rem, 2vw, 0.875rem);
+      font-weight: 700;
+      color: #3730a3;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+
+    .hero-badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #ea580c;
+      box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.2);
+    }
+
+    .hero-school-label {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #4338ca;
+      margin-bottom: 12px;
+    }
+
+    .hero-main-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.85rem, 5.5vw, 3.75rem);
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--color-primary);
+      margin-bottom: 16px;
+      max-width: 920px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-date-banner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+      color: #ffffff;
+      padding: clamp(10px, 2vw, 14px) clamp(20px, 4vw, 32px);
+      border-radius: var(--radius-pill);
+      box-shadow: var(--shadow-glow-purple);
+      margin-bottom: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .hero-date-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.125rem, 3.2vw, 1.625rem);
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      color: #fbbf24;
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.95rem, 2.4vw, 1.25rem);
+      line-height: 1.55;
+      color: var(--color-text-muted);
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: clamp(0.95rem, 2.2vw, 1.0625rem);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(79, 70, 229, 0.35);
+      transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border: none;
+      cursor: pointer;
+      min-height: 48px;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(79, 70, 229, 0.45);
+      background: linear-gradient(135deg, #4f46e5 0%, #3730a3 100%);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    /* Event Quick Overview Strip */
+    .quick-facts-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: clamp(10px, 2vw, 18px);
+      margin-top: clamp(32px, 5vw, 48px);
+    }
+
+    .fact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: 0.84375rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .fact-icon {
+      font-size: 1rem;
+      line-height: 1;
+    }
+
+    /* =========================================================
+       PROGRAMME SECTION (RESPONSIVE GRID & CARDS)
+       ========================================================= */
+    .programme-section {
+      padding-top: clamp(32px, 6vw, 64px);
+      padding-bottom: clamp(48px, 8vw, 88px);
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: clamp(28px, 5vw, 48px);
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-family: var(--font-display);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #6366f1;
+      background: #ede9fe;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .section-subtitle {
+      font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+      color: var(--color-text-muted);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* PROGRAMME COLUMNS CONTAINER */
+    .programme-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(24px, 4vw, 36px);
+      width: 100%;
+    }
+
+    /* Two Equal Columns on Desktop / Larger Tablet */
+    @media (min-width: 860px) {
+      .programme-grid {
+        grid-template-columns: repeat(2, 1fr);
+        align-items: start;
+      }
+    }
+
+    /* PROGRAMME COLUMN CARD CONTAINER */
+    .day-column {
+      background: var(--color-surface);
+      border-radius: var(--radius-xl);
+      padding: clamp(18px, 3.5vw, 30px);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--color-border);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .day-column::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+    }
+
+    .column-cultural::before {
+      background: linear-gradient(90deg, #f59e0b 0%, #f97316 100%);
+    }
+
+    .column-teachers::before {
+      background: linear-gradient(90deg, #6366f1 0%, #a855f7 100%);
+    }
+
+    /* COLUMN HEADER */
+    .day-header {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding-bottom: 20px;
+      margin-bottom: 20px;
+      border-bottom: 1px dashed var(--color-border);
+    }
+
+    .day-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .day-date-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8125rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.02em;
+    }
+
+    .date-cultural {
+      background: var(--color-amber-soft);
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+
+    .date-teachers {
+      background: var(--color-purple-soft);
+      color: var(--color-purple-dark);
+      border: 1px solid var(--color-purple-border);
+    }
+
+    .day-badge-icon {
+      font-size: 1.25rem;
+    }
+
+    .day-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3.2vw, 1.85rem);
+      font-weight: 800;
+      letter-spacing: -0.01em;
+      color: var(--color-primary);
+      line-height: 1.2;
+    }
+
+    /* MOTTO / THEME CALLOUT BOX (EDITABLE) */
+    .day-theme-box {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 12px 14px;
+      border-radius: var(--radius-md);
+      margin-top: 4px;
+    }
+
+    .theme-box-cultural {
+      background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+      border: 1.5px dashed #f59e0b;
+    }
+
+    .theme-box-teachers {
+      background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+      border: 1.5px dashed #818cf8;
+    }
+
+    .theme-badge-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .theme-box-cultural .theme-badge-label {
+      color: #b45309;
+    }
+
+    .theme-box-teachers .theme-badge-label {
+      color: #4338ca;
+    }
+
+    .theme-motto-text {
+      font-family: var(--font-display);
+      font-size: clamp(0.875rem, 2vw, 0.95rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--color-primary);
+      line-height: 1.45;
+    }
+
+    .day-description {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      line-height: 1.5;
+    }
+
+    /* PROGRAMME ITEMS LIST */
+    .programme-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      list-style: none;
+    }
+
+    /* PROGRAMME ITEM CARD */
+    .programme-card {
+      display: flex;
+      align-items: center;
+      gap: clamp(12px, 3vw, 18px);
+      padding: clamp(14px, 2.5vw, 18px);
+      background: #f8fafc;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid #edf2f7;
+      transition: all 0.22s cubic-bezier(0.2, 0.8, 0.2, 1);
+      position: relative;
+      touch-action: manipulation;
+    }
+
+    /* Desktop Hover Lift */
+    @media (hover: hover) {
+      .programme-card:hover {
+        background: #ffffff;
+        transform: translateY(-3px) scale(1.01);
+        border-color: #cbd5e1;
+        box-shadow: var(--shadow-md);
+      }
+
+      .column-cultural .programme-card:hover {
+        border-color: #fde68a;
+      }
+
+      .column-teachers .programme-card:hover {
+        border-color: #c7d2fe;
+      }
+    }
+
+    /* Mobile Touch Feedback */
+    .programme-card:active {
+      transform: scale(0.99);
+      background: #f1f5f9;
+    }
+
+    .item-number-badge {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: clamp(40px, 7vw, 48px);
+      height: clamp(40px, 7vw, 48px);
+      border-radius: var(--radius-md);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(1rem, 2.5vw, 1.15rem);
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .column-cultural .item-number-badge {
+      background: linear-gradient(135deg, #fef3c7 0%, #ffedd5 100%);
+      color: #c2410c;
+      border: 1px solid #fed7aa;
+    }
+
+    .column-teachers .item-number-badge {
+      background: linear-gradient(135deg, #ede9fe 0%, #e0e7ff 100%);
+      color: #4338ca;
+      border: 1px solid #c7d2fe;
+    }
+
+    .item-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      flex-grow: 1;
+      min-width: 0;
+    }
+
+    .item-name {
+      font-family: var(--font-display);
+      font-size: clamp(1rem, 2.4vw, 1.15rem);
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.35;
+      word-break: break-word;
+    }
+
+    .item-meta-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-subtle);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .item-icon-bubble {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      font-size: 1.125rem;
+      flex-shrink: 0;
+    }
+
+    /* Animation on scroll */
+    .animate-on-load {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    }
+
+    .animate-on-load.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================================================
+       CELEBRATION HIGHLIGHT CARD / CALLOUT
+       ========================================================= */
+    .celebration-banner {
+      margin-top: clamp(32px, 5vw, 48px);
+      background: linear-gradient(135deg, #1e1b4b 0%, #2e1065 50%, #312e81 100%);
+      color: #ffffff;
+      border-radius: var(--radius-xl);
+      padding: clamp(24px, 4vw, 36px);
+      box-shadow: var(--shadow-lg);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .celebration-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(245, 158, 11, 0.2), transparent 50%),
+                  radial-gradient(circle at bottom left, rgba(99, 102, 241, 0.25), transparent 50%);
+      pointer-events: none;
+    }
+
+    .celebration-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .celebration-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      font-weight: 800;
+      margin-bottom: 10px;
+      color: #fbbf24;
+    }
+
+    .celebration-text {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      color: #e2e8f0;
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       FOOTER
+       ========================================================= */
+    .site-footer {
+      margin-top: auto;
+      background: #0f172a;
+      color: #f8fafc;
+      padding-top: clamp(40px, 6vw, 60px);
+      padding-bottom: clamp(32px, 5vw, 48px);
+      border-top: 1px solid #1e293b;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .footer-school-name {
+      font-family: var(--font-display);
+      font-size: clamp(1.0625rem, 2.5vw, 1.35rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+    }
+
+    .footer-event-title {
+      font-family: var(--font-display);
+      font-size: clamp(0.95rem, 2.2vw, 1.125rem);
+      font-weight: 700;
+      color: #a5b4fc;
+    }
+
+    .footer-date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fbbf24;
+      padding: 4px 14px;
+      border-radius: var(--radius-pill);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-tagline {
+      font-size: clamp(0.875rem, 2vw, 0.95rem);
+      color: #94a3b8;
+      font-style: italic;
+      line-height: 1.5;
+      padding-top: 8px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      width: 100%;
+    }
+
+    .footer-copyright {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 8px;
+    }
+
+    /* =========================================================
+       ACCESSIBILITY & REDUCED MOTION
+       ========================================================= */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .floating-star {
+        animation: none !important;
+      }
+      .animate-on-load {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- AMBIENT BACKGROUND DECORATIONS -->
+  <div class="bg-decorations-wrapper" aria-hidden="true">
+    <div class="ambient-glow glow-1"></div>
+    <div class="ambient-glow glow-2"></div>
+    <div class="ambient-glow glow-3"></div>
+
+    <!-- Tasteful Floating Stars / Sparkles -->
+    <svg class="floating-star star-1" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+    </svg>
+    <svg class="floating-star star-2" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+    </svg>
+    <svg class="floating-star star-3" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+    </svg>
+    <svg class="floating-star star-4" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+    </svg>
+    <svg class="floating-star star-5" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 2L14.4 9.6L22 12L14.4 14.4L12 22L9.6 14.4L2 12L9.6 9.6L12 2Z"/>
+    </svg>
+  </div>
+
+  <div class="page-wrapper">
+    
+    <!-- HEADER -->
+    <header class="site-header" id="header" role="banner">
+      <div class="container header-inner">
+        <a href="#top" class="school-identity" id="school-identity-link" aria-label="Omega Public School and Kindergarten">
+          <div class="school-logo-emblem" aria-hidden="true">Ω</div>
+          <div class="school-name-group">
+            <span class="school-title">OMEGA PUBLIC SCHOOL</span>
+            <span class="school-subtitle">AND KINDERGARTEN</span>
+          </div>
+        </a>
+        <a href="#programme" class="header-action-btn" id="nav-explore-btn">
+          <span>Programme</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <!-- HERO SECTION -->
+      <section class="hero-section" id="top" aria-labelledby="hero-title">
+        <div class="container">
+          
+          <div class="hero-badge-pill" id="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span>Annual Celebrations 2026</span>
+          </div>
+
+          <div class="hero-school-label" id="hero-school-name">
+            OMEGA PUBLIC SCHOOL AND KINDERGARTEN
+          </div>
+
+          <h1 class="hero-main-title" id="hero-title">
+            CULTURAL DAY &amp; TEACHERS’ DAY 2026
+          </h1>
+
+          <div class="hero-date-banner" id="hero-dates">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            <span class="hero-date-text">4–5 SEPTEMBER</span>
+          </div>
+
+          <p class="hero-tagline" id="hero-tagline">
+            Celebrating creativity, culture, our inspiring teachers, and the vibrant spirit of our students.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#programme" class="btn-primary" id="explore-programme-btn">
+              <span>Explore Programme</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+            </a>
+          </div>
+
+          <!-- Quick facts ribbon -->
+          <div class="quick-facts-strip" id="quick-facts">
+            <div class="fact-badge">
+              <span class="fact-icon">🎭</span>
+              <span>4 Sept: Cultural Day</span>
+            </div>
+            <div class="fact-badge">
+              <span class="fact-icon">💐</span>
+              <span>5 Sept: Teachers' Day</span>
+            </div>
+            <div class="fact-badge">
+              <span class="fact-icon">🌟</span>
+              <span>Stage &amp; Musical Showcases</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PROGRAMME SECTION -->
+      <section class="programme-section" id="programme" aria-labelledby="programme-title">
+        <div class="container">
+          
+          <div class="section-header">
+            <span class="section-badge" id="section-badge">Event Schedule</span>
+            <h2 class="section-title" id="programme-title">Programme Highlights</h2>
+            <p class="section-subtitle" id="programme-subtitle">
+              Join us for two joyous days of cultural heritage, student creativity, and heartfelt educator tributes.
+            </p>
+          </div>
+
+          <!-- RESPONSIVE PROGRAMME GRID (2 columns on desktop, 1 column on mobile) -->
+          <div class="programme-grid" id="programme-grid">
+            
+            <!-- LEFT COLUMN: CULTURAL DAY (4 SEPTEMBER) -->
+            <div class="day-column column-cultural" id="cultural-day-column" role="region" aria-labelledby="cultural-day-heading">
+              <div class="day-header">
+                <div class="day-meta-row">
+                  <span class="day-date-tag date-cultural">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    4 September
+                  </span>
+                  <span class="day-badge-icon" aria-hidden="true">🎭</span>
+                </div>
+                <h3 class="day-title" id="cultural-day-heading">CULTURAL DAY</h3>
+                
+                <!-- DYNAMICALLY POPULATED MOTTO / THEME -->
+                <div class="day-theme-box theme-box-cultural" id="cultural-theme-box">
+                  <span class="theme-badge-label">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Theme &amp; Motto
+                  </span>
+                  <div class="theme-motto-text" id="cultural-motto-display">
+                    <!-- Populated by JavaScript -->
+                  </div>
+                </div>
+
+                <p class="day-description" id="cultural-description-display">
+                  <!-- Populated by JavaScript -->
+                </p>
+              </div>
+
+              <!-- DYNAMICALLY POPULATED LIST -->
+              <ul class="programme-items-list" id="cultural-day-list" aria-label="Cultural Day Programme Items">
+                <!-- JavaScript will populate items here -->
+              </ul>
+            </div>
+
+            <!-- RIGHT COLUMN: TEACHERS' DAY (5 SEPTEMBER) -->
+            <div class="day-column column-teachers" id="teachers-day-column" role="region" aria-labelledby="teachers-day-heading">
+              <div class="day-header">
+                <div class="day-meta-row">
+                  <span class="day-date-tag date-teachers">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                    5 September
+                  </span>
+                  <span class="day-badge-icon" aria-hidden="true">💐</span>
+                </div>
+                <h3 class="day-title" id="teachers-day-heading">TEACHERS’ DAY</h3>
+                
+                <!-- DYNAMICALLY POPULATED MOTTO / THEME -->
+                <div class="day-theme-box theme-box-teachers" id="teachers-theme-box">
+                  <span class="theme-badge-label">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></svg>
+                    Theme &amp; Motto
+                  </span>
+                  <div class="theme-motto-text" id="teachers-motto-display">
+                    <!-- Populated by JavaScript -->
+                  </div>
+                </div>
+
+                <p class="day-description" id="teachers-description-display">
+                  <!-- Populated by JavaScript -->
+                </p>
+              </div>
+
+              <!-- DYNAMICALLY POPULATED LIST -->
+              <ul class="programme-items-list" id="teachers-day-list" aria-label="Teachers' Day Programme Items">
+                <!-- JavaScript will populate items here -->
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- CELEBRATION CALLOUT CARD -->
+          <div class="celebration-banner" id="celebration-callout">
+            <div class="celebration-inner">
+              <h3 class="celebration-title">A Festive Gathering for Everyone</h3>
+              <p class="celebration-text">
+                We warmly welcome all parents, students, teachers, and esteemed guests to experience the vibrancy and talent of Omega Public School and Kindergarten.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer" id="footer" role="contentinfo">
+      <div class="container footer-content">
+        <div class="footer-school-name" id="footer-school">
+          OMEGA PUBLIC SCHOOL AND KINDERGARTEN
+        </div>
+        <div class="footer-event-title" id="footer-event">
+          Cultural Day &amp; Teachers’ Day 2026
+        </div>
+        <div class="footer-date-pill" id="footer-dates">
+          4–5 September
+        </div>
+        <p class="footer-tagline" id="footer-tagline">
+          “Celebrating learning, creativity and culture.”
+        </p>
+        <div class="footer-copyright">
+          © Powered by SimbengInfo, 2026. All rights reserved.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- JAVASCRIPT LOGIC & PROGRAMME DATA -->
+  <script>
+    // =========================================================================
+    // 🎭 EDIT CULTURAL DAY (4 SEPTEMBER) DETAILS & MOTTO HERE
+    // =========================================================================
+
+    // Edit the Cultural Day Theme / Motto below:
+    const culturalDayTheme = "“Harmony in Diversity: Celebrating Our Rich Heritage & Unity”";
+
+    // Edit the Cultural Day description below:
+    const culturalDayDescription = "A vibrant celebration of music, rhythm, cultural traditions, and artistic expressions.";
+
+    // Edit the Cultural Day programme items below:
+    const culturalDayItems = [
+        "Dance",
+        "Singing Performance",
+        "Cultural Presentation",
+        "Drama"
+    ];
+
+    // =========================================================================
+    // 💐 EDIT TEACHERS' DAY (5 SEPTEMBER) DETAILS & MOTTO HERE
+    // =========================================================================
+
+    // Edit the Teachers' Day Theme / Motto below:
+    const teachersDayTheme = "“Guiding Lights: Honouring Wisdom, Dedication & Inspiration”";
+
+    // Edit the Teachers' Day description below:
+    const teachersDayDescription = "A heartfelt tribute dedicated to our inspiring teachers and educators.";
+
+    // Edit the Teachers' Day programme items below:
+    const teachersDayItems = [
+        "Dance",
+        "Welcome Speech",
+        "Teachers’ Felicitation",
+        "Musical Performance"
+    ];
+
+
+    // =========================================================================
+    // ICON MAPPING HELPER (Contextual Emojis/Icons)
+    // =========================================================================
+    function getProgrammeIcon(itemName) {
+      const name = String(itemName).toLowerCase();
+      if (name.includes('dance')) return '💃';
+      if (name.includes('speech') || name.includes('welcome')) return '🎙️';
+      if (name.includes('felicitation') || name.includes('award') || name.includes('honour') || name.includes('honor')) return '🏆';
+      if (name.includes('sing') || name.includes('song') || name.includes('choir')) return '🎤';
+      if (name.includes('music') || name.includes('instrument') || name.includes('band')) return '🎵';
+      if (name.includes('drama') || name.includes('play') || name.includes('skit') || name.includes('theatre')) return '🎭';
+      if (name.includes('cultural') || name.includes('presentation') || name.includes('show')) return '✨';
+      if (name.includes('art') || name.includes('craft')) return '🎨';
+      if (name.includes('vote of thanks') || name.includes('closing')) return '🙏';
+      return '⭐';
+    }
+
+    // =========================================================================
+    // RENDER PROGRAMME CARDS
+    // =========================================================================
+    function renderProgrammeList(items, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+
+      container.innerHTML = '';
+
+      items.forEach((item, index) => {
+        const itemNumber = String(index + 1).padStart(2, '0');
+        const itemName = typeof item === 'string' ? item : item.title || 'Programme Item';
+        const icon = getProgrammeIcon(itemName);
+
+        const card = document.createElement('li');
+        card.className = 'programme-card animate-on-load';
+        card.id = `${containerId}-item-${index + 1}`;
+        card.innerHTML = `
+          <div class="item-number-badge" aria-label="Item ${itemNumber}">
+            ${itemNumber}
+          </div>
+          <div class="item-content">
+            <span class="item-name">${itemName}</span>
+          </div>
+          <div class="item-icon-bubble" aria-hidden="true">
+            ${icon}
+          </div>
+        `;
+
+        container.appendChild(card);
+      });
+    }
+
+    // =========================================================================
+    // POPULATE THEMES & DESCRIPTIONS
+    // =========================================================================
+    function populateHeaderDetails() {
+      // Cultural Day (4 Sept)
+      const culturalMottoEl = document.getElementById('cultural-motto-display');
+      if (culturalMottoEl) culturalMottoEl.textContent = culturalDayTheme;
+
+      const culturalDescEl = document.getElementById('cultural-description-display');
+      if (culturalDescEl) culturalDescEl.textContent = culturalDayDescription;
+
+      // Teachers' Day (5 Sept)
+      const teachersMottoEl = document.getElementById('teachers-motto-display');
+      if (teachersMottoEl) teachersMottoEl.textContent = teachersDayTheme;
+
+      const teachersDescEl = document.getElementById('teachers-description-display');
+      if (teachersDescEl) teachersDescEl.textContent = teachersDayDescription;
+    }
+
+    // =========================================================================
+    // INITIALIZATION & SCROLL ANIMATIONS
+    // =========================================================================
+    document.addEventListener('DOMContentLoaded', () => {
+      // Populate theme mottos and descriptions dynamically
+      populateHeaderDetails();
+
+      // Render both programmes dynamically (4th Sept Cultural Day, 5th Sept Teachers' Day)
+      renderProgrammeList(culturalDayItems, 'cultural-day-list');
+      renderProgrammeList(teachersDayItems, 'teachers-day-list');
+
+      // Progressive entrance animation for cards
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach((entry, idx) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('is-visible');
+            }, idx * 60);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.animate-on-load').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
+</body>
+</html>
