@@ -935,6 +935,72 @@
       line-height: 1.5;
     }
 
+    /* COMPERES / HOSTS DISPLAY */
+    .day-comperes-box {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 10px 12px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+    }
+
+    .comperes-box-cultural {
+      border-left: 3px solid #f59e0b;
+      background: linear-gradient(135deg, rgba(255, 251, 235, 0.75) 0%, rgba(255, 255, 255, 0.95) 100%);
+    }
+
+    .comperes-box-teachers {
+      border-left: 3px solid #6366f1;
+      background: linear-gradient(135deg, rgba(245, 243, 255, 0.75) 0%, rgba(255, 255, 255, 0.95) 100%);
+    }
+
+    .comperes-header-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.6875rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+    }
+
+    .comperes-box-cultural .comperes-header-row {
+      color: #b45309;
+    }
+
+    .comperes-box-teachers .comperes-header-row {
+      color: #4338ca;
+    }
+
+    .comperes-tags-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .compere-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78125rem;
+      font-weight: 600;
+      color: #1e293b;
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+      line-height: 1.3;
+    }
+
+    .compere-chip-icon {
+      font-size: 0.75rem;
+      line-height: 1;
+    }
+
     /* PROGRAMME ITEMS LIST */
     .programme-items-list {
       display: flex;
@@ -1331,6 +1397,17 @@
                   </div>
                 </div>
 
+                <!-- COMPERES / HOSTS -->
+                <div class="day-comperes-box comperes-box-cultural" id="cultural-comperes-box">
+                  <div class="comperes-header-row">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                    <span>Comperes</span>
+                  </div>
+                  <div class="comperes-tags-wrap" id="cultural-comperes-display">
+                    <!-- Populated by JavaScript -->
+                  </div>
+                </div>
+
                 <p class="day-description" id="cultural-description-display">
                   <!-- Populated by JavaScript -->
                 </p>
@@ -1361,6 +1438,17 @@
                     Theme &amp; Motto
                   </span>
                   <div class="theme-motto-text" id="teachers-motto-display">
+                    <!-- Populated by JavaScript -->
+                  </div>
+                </div>
+
+                <!-- COMPERES / HOSTS -->
+                <div class="day-comperes-box comperes-box-teachers" id="teachers-comperes-box">
+                  <div class="comperes-header-row">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" x2="12" y1="19" y2="22"/></svg>
+                    <span>Comperes</span>
+                  </div>
+                  <div class="comperes-tags-wrap" id="teachers-comperes-display">
                     <!-- Populated by JavaScript -->
                   </div>
                 </div>
@@ -1462,28 +1550,44 @@
     // Edit the Cultural Day description below:
     const culturalDayDescription = "A vibrant celebration of music, rhythm, cultural traditions, and artistic expressions.";
 
+    // Edit the Cultural Day Comperes below:
+    const culturalDayComperes = [
+      "Nenghoiching Cl-12(Sc)",
+      "Lhingjemhoi Cl-12(Arts)",
+      "Mangminlen Cl-12(Sc)"
+    ];
+
     // Edit the Cultural Day programme items below:
     const culturalDayItems = [
+       "Dahpi Chupna: Admin Secy", 
+       "Gollui Golseh - Traditional Cultural Games: 10AM - 10:30AM",
+        "Solo - Nengnuntheng Haokip",
+        "Lemna - Principal",
+         "Phat lhandoh na - Madam Hoinu",
+         "Ichondan u bidoi(Significance of Cultural Day) - Hilkung Mangcha",
         "Salu lap Laam",
-        "Nepali cultural dance",
-        "Lamlian Lehlan (Mizo Dance)",
-        "Flaunting of traditional Attire by Cl-9",
-        "Vaiphei Cultural Dance",
-        "Suhta Lam Cl-7",
-        "Khupting LhaoLha",
-        "Jemcoisel",
-        "Khannougol",
-        "Mixed Cultural troupe",
-        "Pupa Lenna gamhoi",
-        "Cultural Dance-Boarders(5&6)",
-        "Cultural Dance-Boarders(9)",
-        "Pusa Pasa",
-        "Solo-Neinuntheng",
-        "Gamleng Sakap",
+        "Jaila",
+        "Gollui thil hilchetna",
+        "Lhasim Nikho Sim",
         "Traditional Show-KG & Cl-1",
         "Cultural Dance-Cl-2",
-        "identification of objects ad their uses",
-        "Lhasim Nikho Sim"
+        "Pula Pala",
+        "Pusa Pasa",
+        "Vaiphei Cultural Dance",
+        "Nepali cultural dance",
+        "Pupa Lenna gamhoi",
+        "Lamlian Lehlan (Mizo Dance)",
+        "REFRESHMENT (30-minutes)",
+        "Flaunting of traditional Attire by Cl-9",
+        "Jemchoisel",
+        "Khannougol",
+        "Suhta Lam",
+        "Khupting LhaoLha",       
+        "Mixed Cultural troupe",
+        "Gamlen Sakap",
+        "Thadou Cultural Dance",
+        "Kin khum khana-VP",
+        "Phatchaina tao - Headmistress"
     ];
 
     // =========================================================================
@@ -1496,31 +1600,44 @@
     // Edit the Teachers' Day description below:
     const teachersDayDescription = "A heartfelt tribute dedicated to our inspiring teachers and educators.";
 
+    // Edit the Teachers' Day Comperes below:
+    const teachersDayComperes = [
+      "Angela Lamneihoi Cl-10",
+      "Hoisolam Cl-10",
+      "Lakwang Cl-12(Sc)"
+    ];
+
     // Edit the Teachers' Day programme items below:
     const teachersDayItems = [
+        "Welcome Speech-Kimboichong-Cl-10",
+        "Welcome Song- Boarders",
+        "Invocation - VP",
         "Tribute to teachers: The Sultans",
+        "Young Pioneers- 21 Guns",
+        "Choreography-Nur",
+        "Solo-Lamnunthem Khongsai",
         "The Little Bumble Bees",
+        "Solo Nemneithem",
+        "Fashion Show- Pre Nur",
+         "Dance of dreams-Sehgunmang",
         "The Dancing Stars",
+        "Solo-Satboilen",
         "Tabahi crew Couple Dance",
+        "Skits-Break Free",
+        "Solo-Thanggunhao",
         "The Groove Girls",
+        "The Rebel Within-Mangminthang",
+        "Nepali Dance-Lydia",
         "Bubbly Beats",
         "The Ancienct Waltz",
         "Chineese Classical Dance",
-        "Nepali Dance-Lydia",
-        "The Saturn",
-        "The Rebel Within-Mangminthang",
-        "Desi Family",
-        "The 90's",
-        "Skit-Break Free",
-        "The Sync",
-        "Dance of dreams-Sehgunmang",
-        "Solo-lamnunthem Khongsai",
-         "Solo Nemneithem",
-         "Solo-Satbolen",
-         "Duet-Kamgunhao ad Kaigoumang",
-         "Fashion Show- Pre Nur",
-         "choreography-Nur"
-    ];
+         "Dance-The Saturn",
+         "Dance-Desi Family",
+          "Dance - The Sync",
+          "Dance - The 90's",
+          "Vote of Thanks -Hoithenkim ",
+          "Closing prayer- Madam Tingboi"                  
+  ];
 
 
     // =========================================================================
@@ -1879,7 +1996,22 @@
     }
 
     // =========================================================================
-    // POPULATE THEMES & DESCRIPTIONS
+    // RENDER COMPERES / HOSTS CHIPS
+    // =========================================================================
+    function renderComperesChips(comperes, containerId) {
+      const container = document.getElementById(containerId);
+      if (!container) return;
+      container.innerHTML = '';
+      comperes.forEach(compere => {
+        const chip = document.createElement('span');
+        chip.className = 'compere-chip';
+        chip.innerHTML = `<span class="compere-chip-icon" aria-hidden="true">🎙️</span><span>${compere}</span>`;
+        container.appendChild(chip);
+      });
+    }
+
+    // =========================================================================
+    // POPULATE THEMES, COMPERES & DESCRIPTIONS
     // =========================================================================
     function populateHeaderDetails() {
       // Cultural Day (4 Sept)
@@ -1889,12 +2021,16 @@
       const culturalDescEl = document.getElementById('cultural-description-display');
       if (culturalDescEl) culturalDescEl.textContent = culturalDayDescription;
 
+      renderComperesChips(culturalDayComperes, 'cultural-comperes-display');
+
       // Teachers' Day (5 Sept)
       const teachersMottoEl = document.getElementById('teachers-motto-display');
       if (teachersMottoEl) teachersMottoEl.textContent = teachersDayTheme;
 
       const teachersDescEl = document.getElementById('teachers-description-display');
       if (teachersDescEl) teachersDescEl.textContent = teachersDayDescription;
+
+      renderComperesChips(teachersDayComperes, 'teachers-comperes-display');
     }
 
     // =========================================================================
