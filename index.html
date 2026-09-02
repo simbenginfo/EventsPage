@@ -12,6 +12,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- jsPDF for instant client-side PDF downloads -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
   <style>
     /* =========================================================
        CSS VARIABLES & THEME CONFIGURATION
@@ -1001,6 +1004,152 @@
       line-height: 1;
     }
 
+    /* DOWNLOAD PDF BUTTONS */
+    .day-meta-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-download-pdf {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      touch-action: manipulation;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      background: #ffffff;
+      line-height: 1.2;
+    }
+
+    .btn-download-cultural {
+      color: #92400e;
+      background: #ffffff;
+      border-color: #fcd34d;
+    }
+
+    .btn-download-cultural:hover {
+      background: #fef3c7;
+      border-color: #f59e0b;
+      color: #78350f;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(245, 158, 11, 0.2);
+    }
+
+    .btn-download-teachers {
+      color: #3730a3;
+      background: #ffffff;
+      border-color: #c7d2fe;
+    }
+
+    .btn-download-teachers:hover {
+      background: #ede9fe;
+      border-color: #6366f1;
+      color: #312e81;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(99, 102, 241, 0.2);
+    }
+
+    .btn-download-pdf:active {
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+    }
+
+    .day-footer-action {
+      margin-top: 24px;
+      padding-top: 18px;
+      border-top: 1px dashed var(--color-border);
+      display: flex;
+      justify-content: center;
+    }
+
+    .btn-download-pdf-full {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border-radius: var(--radius-md);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+      touch-action: manipulation;
+      border: 1.5px solid transparent;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .btn-download-pdf-full.btn-download-cultural {
+      background: #fffbeb;
+      color: #b45309;
+      border-color: #fde68a;
+    }
+
+    .btn-download-pdf-full.btn-download-cultural:hover {
+      background: #fef3c7;
+      border-color: #f59e0b;
+      color: #78350f;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(217, 119, 6, 0.15);
+    }
+
+    .btn-download-pdf-full.btn-download-teachers {
+      background: #f5f3ff;
+      color: #4338ca;
+      border-color: #ddd6fe;
+    }
+
+    .btn-download-pdf-full.btn-download-teachers:hover {
+      background: #ede9fe;
+      border-color: #818cf8;
+      color: #312e81;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(99, 102, 241, 0.15);
+    }
+
+    .btn-download-pdf-full:active {
+      transform: translateY(0);
+    }
+
+    /* TOAST NOTIFICATION */
+    .pdf-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 22px;
+      border-radius: var(--radius-pill);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 600;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 9999;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+      opacity: 0;
+      pointer-events: none;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+
+    .pdf-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
     /* PROGRAMME ITEMS LIST */
     .programme-items-list {
       display: flex;
@@ -1378,11 +1527,17 @@
             <div class="day-column column-cultural" id="cultural-day-column" role="region" aria-labelledby="cultural-day-heading">
               <div class="day-header">
                 <div class="day-meta-row">
-                  <span class="day-date-tag date-cultural">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                    4 September
-                  </span>
-                  <span class="day-badge-icon" aria-hidden="true">🎭</span>
+                  <div class="day-meta-left">
+                    <span class="day-date-tag date-cultural">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                      4 September
+                    </span>
+                    <span class="day-badge-icon" aria-hidden="true">🎭</span>
+                  </div>
+                  <button type="button" class="btn-download-pdf btn-download-cultural" id="btn-download-cultural-top" title="Download Cultural Day Programme as PDF" aria-label="Download Cultural Day Programme as PDF">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    <span>Download PDF</span>
+                  </button>
                 </div>
                 <h3 class="day-title" id="cultural-day-heading">CULTURAL DAY</h3>
                 
@@ -1417,17 +1572,31 @@
               <ul class="programme-items-list" id="cultural-day-list" aria-label="Cultural Day Programme Items">
                 <!-- JavaScript will populate items here -->
               </ul>
+
+              <!-- BOTTOM PDF DOWNLOAD ACTION -->
+              <div class="day-footer-action">
+                <button type="button" class="btn-download-pdf-full btn-download-cultural" id="btn-download-cultural-bottom" aria-label="Download Cultural Day Schedule as PDF">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  <span>Download Cultural Day Schedule (PDF)</span>
+                </button>
+              </div>
             </div>
 
             <!-- RIGHT COLUMN: TEACHERS' DAY (5 SEPTEMBER) -->
             <div class="day-column column-teachers" id="teachers-day-column" role="region" aria-labelledby="teachers-day-heading">
               <div class="day-header">
                 <div class="day-meta-row">
-                  <span class="day-date-tag date-teachers">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
-                    5 September
-                  </span>
-                  <span class="day-badge-icon" aria-hidden="true">💐</span>
+                  <div class="day-meta-left">
+                    <span class="day-date-tag date-teachers">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                      5 September
+                    </span>
+                    <span class="day-badge-icon" aria-hidden="true">💐</span>
+                  </div>
+                  <button type="button" class="btn-download-pdf btn-download-teachers" id="btn-download-teachers-top" title="Download Teachers' Day Programme as PDF" aria-label="Download Teachers' Day Programme as PDF">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    <span>Download PDF</span>
+                  </button>
                 </div>
                 <h3 class="day-title" id="teachers-day-heading">TEACHERS’ DAY</h3>
                 
@@ -1462,6 +1631,14 @@
               <ul class="programme-items-list" id="teachers-day-list" aria-label="Teachers' Day Programme Items">
                 <!-- JavaScript will populate items here -->
               </ul>
+
+              <!-- BOTTOM PDF DOWNLOAD ACTION -->
+              <div class="day-footer-action">
+                <button type="button" class="btn-download-pdf-full btn-download-teachers" id="btn-download-teachers-bottom" aria-label="Download Teachers' Day Schedule as PDF">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                  <span>Download Teachers' Day Schedule (PDF)</span>
+                </button>
+              </div>
             </div>
 
           </div>
@@ -1618,7 +1795,7 @@
         "Keynote address - Adm Secy",
         "Choreography-Nur",
         "Solo-Lamnunthem Khongsai",
-        "The Little Bumble Bees",
+        "Dance - The Little Bumble Bees",
         "Solo Nemneithem",
         "Felicitation of Teachers",
         "Fashion Show- Pre Nur",
@@ -2037,6 +2214,269 @@
     }
 
     // =========================================================================
+    // TOAST NOTIFICATION
+    // =========================================================================
+    let toastTimeout = null;
+    function showToast(message) {
+      let toastEl = document.getElementById('pdf-toast');
+      if (!toastEl) {
+        toastEl = document.createElement('div');
+        toastEl.id = 'pdf-toast';
+        toastEl.className = 'pdf-toast';
+        toastEl.setAttribute('role', 'status');
+        toastEl.setAttribute('aria-live', 'polite');
+        document.body.appendChild(toastEl);
+      }
+      toastEl.textContent = message;
+      toastEl.classList.add('show');
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.remove('show');
+      }, 3500);
+    }
+
+    // Helper to sanitize emojis and special quotes for standard PDF Helvetica font
+    function sanitizeForPdf(text) {
+      if (!text) return '';
+      return String(text)
+        .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E6}-\u{1F1FF}\u{1F600}-\u{1F64F}\u{1F680}-\u{1F6FF}]/gu, '')
+        .replace(/[“”]/g, '"')
+        .replace(/[‘’]/g, "'")
+        .replace(/–/g, '-')
+        .replace(/—/g, ' - ')
+        .replace(/\s+/g, ' ')
+        .trim();
+    }
+
+    // =========================================================================
+    // PDF GENERATION (Cultural Day & Teachers' Day)
+    // =========================================================================
+    function downloadProgrammePDF(dayType) {
+      const isCultural = dayType === 'cultural';
+      const eventName = isCultural ? 'Cultural Day' : "Teachers' Day";
+      const title = isCultural ? "CULTURAL DAY PROGRAMME" : "TEACHERS' DAY PROGRAMME";
+      const dateStr = isCultural ? "Friday, 4th September 2026" : "Saturday, 5th September 2026";
+      const themeRaw = isCultural ? culturalDayTheme : teachersDayTheme;
+      const themeClean = sanitizeForPdf(themeRaw);
+      const comperesRaw = isCultural ? culturalDayComperes : teachersDayComperes;
+      const itemsRaw = isCultural ? culturalDayItems : teachersDayItems;
+      const filename = isCultural ? "Omega-Cultural-Day-Programme-4Sept2026.pdf" : "Omega-Teachers-Day-Programme-5Sept2026.pdf";
+      const schoolName = "2 IN 1 OMEGA PUBLIC SCHOOL AND KINDERGARTEN";
+
+      showToast(`📄 Generating ${eventName} PDF...`);
+
+      // Verify jsPDF availability
+      if (window.jspdf && window.jspdf.jsPDF) {
+        try {
+          const { jsPDF } = window.jspdf;
+          const doc = new jsPDF({
+            orientation: 'portrait',
+            unit: 'pt',
+            format: 'a4'
+          });
+
+          const pageWidth = doc.internal.pageSize.getWidth();   // 595.28 pt
+          const pageHeight = doc.internal.pageSize.getHeight(); // 841.89 pt
+          const margin = 36;
+          const contentWidth = pageWidth - (margin * 2);
+
+          let currentY = 0;
+
+          function drawPageHeader(docInstance, pageNum) {
+            // Top colored brand strip
+            if (isCultural) {
+              docInstance.setFillColor(217, 119, 6); // Amber
+            } else {
+              docInstance.setFillColor(79, 70, 229); // Indigo
+            }
+            docInstance.rect(0, 0, pageWidth, 6, 'F');
+
+            if (pageNum === 1) {
+              // School Name Header
+              docInstance.setFont('helvetica', 'bold');
+              docInstance.setFontSize(14);
+              docInstance.setTextColor(30, 27, 75); // Dark Navy
+              docInstance.text(schoolName, pageWidth / 2, 36, { align: 'center' });
+
+              // Sub-header
+              docInstance.setFont('helvetica', 'bold');
+              docInstance.setFontSize(8.5);
+              docInstance.setTextColor(100, 116, 139); // Slate 500
+              docInstance.text('ANNUAL CELEBRATION 2026  •  OFFICIAL PROGRAMME SCHEDULE', pageWidth / 2, 50, { align: 'center' });
+
+              // Divider
+              docInstance.setDrawColor(226, 232, 240);
+              docInstance.setLineWidth(1);
+              docInstance.line(margin, 58, pageWidth - margin, 58);
+
+              // Banner Card
+              if (isCultural) {
+                docInstance.setFillColor(254, 243, 199); // Amber soft
+                docInstance.setDrawColor(245, 158, 11);  // Amber border
+              } else {
+                docInstance.setFillColor(237, 233, 254); // Purple soft
+                docInstance.setDrawColor(129, 140, 248); // Purple border
+              }
+
+              const bannerHeight = 84;
+              docInstance.roundedRect(margin, 66, contentWidth, bannerHeight, 6, 6, 'FD');
+
+              // Event Title
+              docInstance.setFont('helvetica', 'bold');
+              docInstance.setFontSize(14);
+              if (isCultural) {
+                docInstance.setTextColor(180, 83, 9);
+              } else {
+                docInstance.setTextColor(67, 56, 202);
+              }
+              docInstance.text(title, margin + 14, 86);
+
+              // Date
+              docInstance.setFont('helvetica', 'bold');
+              docInstance.setFontSize(9.5);
+              docInstance.setTextColor(30, 27, 75);
+              docInstance.text(`Date: ${dateStr}`, pageWidth - margin - 14, 86, { align: 'right' });
+
+              // Theme Motto
+              docInstance.setFont('helvetica', 'italic');
+              docInstance.setFontSize(9);
+              docInstance.setTextColor(51, 65, 85);
+              const mottoLines = docInstance.splitTextToSize(`Theme: "${themeClean}"`, contentWidth - 28);
+              docInstance.text(mottoLines, margin + 14, 104);
+
+              // Comperes
+              docInstance.setFont('helvetica', 'bold');
+              docInstance.setFontSize(8.5);
+              if (isCultural) {
+                docInstance.setTextColor(146, 64, 14);
+              } else {
+                docInstance.setTextColor(55, 48, 163);
+              }
+              const comperesClean = comperesRaw.map(c => sanitizeForPdf(c)).join('   |   ');
+              const comperesLines = docInstance.splitTextToSize(`Comperes: ${comperesClean}`, contentWidth - 28);
+              docInstance.text(comperesLines, margin + 14, 136);
+
+              currentY = 162;
+            } else {
+              // Subsequent Page Header
+              docInstance.setFont('helvetica', 'bold');
+              docInstance.setFontSize(8.5);
+              docInstance.setTextColor(100, 116, 139);
+              docInstance.text(`${schoolName}  -  ${title} (Continued)`, margin, 24);
+
+              docInstance.setDrawColor(226, 232, 240);
+              docInstance.setLineWidth(0.8);
+              docInstance.line(margin, 28, pageWidth - margin, 28);
+
+              currentY = 40;
+            }
+          }
+
+          drawPageHeader(doc, 1);
+
+          // Render programme rows
+          itemsRaw.forEach((rawItem, idx) => {
+            const itemNumber = String(idx + 1).padStart(2, '0');
+            const cleanItem = sanitizeForPdf(rawItem);
+            const isSpecial = cleanItem.toUpperCase().includes('REFRESHMENT') ||
+                              cleanItem.toUpperCase().includes('CLOSING') ||
+                              cleanItem.toUpperCase().includes('OPENING') ||
+                              cleanItem.toUpperCase().includes('FELICITATION');
+
+            const itemHeight = 21;
+
+            // Page break check
+            if (currentY + itemHeight > pageHeight - 45) {
+              doc.addPage();
+              drawPageHeader(doc, doc.internal.getNumberOfPages());
+            }
+
+            // Row background
+            if (isSpecial) {
+              if (isCultural) {
+                doc.setFillColor(254, 243, 199);
+                doc.setDrawColor(245, 158, 11);
+              } else {
+                doc.setFillColor(237, 233, 254);
+                doc.setDrawColor(129, 140, 248);
+              }
+              doc.roundedRect(margin, currentY, contentWidth, itemHeight, 3, 3, 'FD');
+            } else if (idx % 2 === 0) {
+              doc.setFillColor(248, 250, 252);
+              doc.roundedRect(margin, currentY, contentWidth, itemHeight, 2, 2, 'F');
+            }
+
+            // Number Badge
+            if (isSpecial) {
+              if (isCultural) {
+                doc.setFillColor(217, 119, 6);
+              } else {
+                doc.setFillColor(79, 70, 229);
+              }
+              doc.roundedRect(margin + 5, currentY + 3, 22, 15, 3, 3, 'F');
+              doc.setTextColor(255, 255, 255);
+            } else {
+              doc.setFillColor(226, 232, 240);
+              doc.roundedRect(margin + 5, currentY + 3, 22, 15, 3, 3, 'F');
+              doc.setTextColor(71, 85, 105);
+            }
+
+            doc.setFont('helvetica', 'bold');
+            doc.setFontSize(8);
+            doc.text(itemNumber, margin + 16, currentY + 13.5, { align: 'center' });
+
+            // Item Name
+            doc.setFont('helvetica', isSpecial ? 'bold' : 'normal');
+            doc.setFontSize(9);
+            if (isSpecial) {
+              if (isCultural) {
+                doc.setTextColor(180, 83, 9);
+              } else {
+                doc.setTextColor(67, 56, 202);
+              }
+            } else {
+              doc.setTextColor(15, 23, 42);
+            }
+
+            const textX = margin + 34;
+            const textY = currentY + 14;
+            const maxTextWidth = contentWidth - 44;
+            const lines = doc.splitTextToSize(cleanItem, maxTextWidth);
+            doc.text(lines[0] || cleanItem, textX, textY);
+
+            currentY += itemHeight + 3;
+          });
+
+          // Footer on all pages
+          const totalPages = doc.internal.getNumberOfPages();
+          for (let p = 1; p <= totalPages; p++) {
+            doc.setPage(p);
+            doc.setDrawColor(226, 232, 240);
+            doc.setLineWidth(0.8);
+            doc.line(margin, pageHeight - 28, pageWidth - margin, pageHeight - 28);
+
+            doc.setFont('helvetica', 'normal');
+            doc.setFontSize(7.5);
+            doc.setTextColor(148, 163, 184);
+            doc.text(`${schoolName}  •  Official Event Schedule`, margin, pageHeight - 16);
+            doc.text(`Page ${p} of ${totalPages}`, pageWidth - margin, pageHeight - 16, { align: 'right' });
+          }
+
+          doc.save(filename);
+          setTimeout(() => {
+            showToast(`✅ ${eventName} PDF downloaded!`);
+          }, 300);
+        } catch (err) {
+          console.error('Error generating PDF with jsPDF:', err);
+          window.print();
+        }
+      } else {
+        // Fallback to print
+        window.print();
+      }
+    }
+
+    // =========================================================================
     // INITIALIZATION & SCROLL ANIMATIONS
     // =========================================================================
     document.addEventListener('DOMContentLoaded', () => {
@@ -2046,6 +2486,27 @@
       // Render both programmes dynamically (4th Sept Cultural Day, 5th Sept Teachers' Day)
       renderProgrammeList(culturalDayItems, 'cultural-day-list');
       renderProgrammeList(teachersDayItems, 'teachers-day-list');
+
+      // Wire Download PDF buttons
+      const btnDownloadCulturalTop = document.getElementById('btn-download-cultural-top');
+      if (btnDownloadCulturalTop) {
+        btnDownloadCulturalTop.addEventListener('click', () => downloadProgrammePDF('cultural'));
+      }
+
+      const btnDownloadCulturalBottom = document.getElementById('btn-download-cultural-bottom');
+      if (btnDownloadCulturalBottom) {
+        btnDownloadCulturalBottom.addEventListener('click', () => downloadProgrammePDF('cultural'));
+      }
+
+      const btnDownloadTeachersTop = document.getElementById('btn-download-teachers-top');
+      if (btnDownloadTeachersTop) {
+        btnDownloadTeachersTop.addEventListener('click', () => downloadProgrammePDF('teachers'));
+      }
+
+      const btnDownloadTeachersBottom = document.getElementById('btn-download-teachers-bottom');
+      if (btnDownloadTeachersBottom) {
+        btnDownloadTeachersBottom.addEventListener('click', () => downloadProgrammePDF('teachers'));
+      }
 
       // Progressive entrance animation for cards
       const observerOptions = {
